@@ -4,7 +4,12 @@ import UserInput from "./UserInput.js";
 
 class App extends Component {
   state = {
-    names: ["Erin", "Ann", "Nichole", "Sharon", "Maryn"]
+    names: []
+  };
+  addName = (name) => {
+    // to learn this awesome spread syntax, check out these examples: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Syntax
+    var newNames = [name, ...this.state.names];
+    this.setState({ names: newNames });
   };
   removeName = (clickedIndex) => {
     // to learn how the .filter method works, check out https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
@@ -16,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Name Tag Generator</h1>
-        <UserInput />
+        <UserInput addName={this.addName} />
         <NameTagList names={this.state.names} removeName={this.removeName} />
       </div>
     );
