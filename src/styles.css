@@ -26,3 +26,14 @@
   height: 90px;
   font-family: "Permanent Marker", Arial, Helvetica, sans-serif;
 }
+.name-tag__delete {
+  position: absolute;
+  padding: 5px 8px;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.name-tag__delete:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
